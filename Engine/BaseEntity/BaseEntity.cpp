@@ -1,15 +1,28 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
 #include "stdafx.h"
-
-#include "Engine/EngimaEngine.h"
+#include "Engine/BaseEntity/BaseEntity.h"
 
 //------------------------------------------------------------------
 
-int main()
+BaseEntity::BaseEntity(const unsigned InId)
+	: Id(InId)
 {
-	EnigmaEngine* Engine = new EnigmaEngine();
-    return 0;
+
+}
+
+//------------------------------------------------------------------
+
+BaseEntity::~BaseEntity()
+{
+
+}
+
+//------------------------------------------------------------------
+
+void BaseEntity::Update()
+{
+	return;
 }
 
 //------------------------------------------------------------------

@@ -1,16 +1,23 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
-#include "stdafx.h"
-
-#include "Engine/EngimaEngine.h"
+#pragma once
 
 //------------------------------------------------------------------
 
-int main()
+class BaseEntity
 {
-	EnigmaEngine* Engine = new EnigmaEngine();
-    return 0;
-}
+public:
+
+	BaseEntity() = delete;
+	BaseEntity(const unsigned InId);
+	~BaseEntity();
+	BaseEntity(const BaseEntity& obj) = default;
+
+	void Update();
+private:
+
+	unsigned Id;
+};
 
 //------------------------------------------------------------------
 //------------------------------------------------------------------
