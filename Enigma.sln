@@ -9,24 +9,30 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnigmaTests", "EnigmaTests\
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Debug|ARM.ActiveCfg = Debug|Win32
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Debug|x64.ActiveCfg = Debug|x64
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Debug|x64.Build.0 = Debug|x64
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Debug|x86.ActiveCfg = Debug|Win32
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Debug|x86.Build.0 = Debug|Win32
+		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Release|ARM.ActiveCfg = Release|Win32
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Release|x64.ActiveCfg = Release|x64
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Release|x64.Build.0 = Release|x64
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Release|x86.ActiveCfg = Release|Win32
 		{F114EA9C-8832-4570-B97A-6DA8311E09EE}.Release|x86.Build.0 = Release|Win32
+		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Debug|ARM.ActiveCfg = Debug|Win32
 		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Debug|x64.ActiveCfg = Debug|x64
 		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Debug|x64.Build.0 = Debug|x64
 		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Debug|x86.ActiveCfg = Debug|Win32
 		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Debug|x86.Build.0 = Debug|Win32
+		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Release|ARM.ActiveCfg = Release|Win32
 		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Release|x64.ActiveCfg = Release|x64
 		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Release|x64.Build.0 = Release|x64
 		{767788C3-0E4F-456A-B843-37E44A6C9A19}.Release|x86.ActiveCfg = Release|Win32

@@ -14,6 +14,8 @@ public:
 	BaseEntity(const BaseEntity& obj) = default;
 
 	void Update();
+
+	unsigned GetId() const;
 private:
 
 	unsigned Id;

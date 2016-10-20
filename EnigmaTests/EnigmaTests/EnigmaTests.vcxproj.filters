@@ -29,5 +29,8 @@
     <ClCompile Include="EnigmaDefaultTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EngineTests\BaseEntityTests\BaseEntityTestFixturecpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

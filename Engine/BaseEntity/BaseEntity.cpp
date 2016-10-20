@@ -15,7 +15,7 @@ BaseEntity::BaseEntity(const unsigned InId)
 
 BaseEntity::~BaseEntity()
 {
-
+	Id = 0;
 }
 
 //------------------------------------------------------------------
@@ -23,6 +23,13 @@ BaseEntity::~BaseEntity()
 void BaseEntity::Update()
 {
 	return;
+}
+
+//------------------------------------------------------------------
+
+unsigned BaseEntity::GetId() const
+{
+	return Id;
 }
 
 //------------------------------------------------------------------
