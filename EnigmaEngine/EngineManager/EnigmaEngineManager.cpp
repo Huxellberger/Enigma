@@ -1,35 +1,39 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
-#include "stdafx.h"
-#include "Engine/BaseEntity/BaseEntity.h"
+#include "pch.h"
+
+#include "EngineManager/EnigmaEngineManager.h"
+#include "BaseEntity/BaseEntityManager.h"
+
+#include <memory>
 
 //------------------------------------------------------------------
 
-BaseEntity::BaseEntity(const unsigned InId)
-	: Id(InId)
+EnigmaEngineManager::EnigmaEngineManager()
+	: EntityManager(nullptr)
 {
 
 }
 
 //------------------------------------------------------------------
 
-BaseEntity::~BaseEntity()
+EnigmaEngineManager::~EnigmaEngineManager()
 {
-	Id = 0;
+	EntityManager.reset();
 }
 
 //------------------------------------------------------------------
 
-void BaseEntity::Update()
+void EnigmaEngineManager::Initialise()
 {
-	return;
+	EntityManager = std::make_unique<BaseEntityManager>();
 }
 
 //------------------------------------------------------------------
 
-unsigned BaseEntity::GetId() const
+void EnigmaEngineManager::ShutDown()
 {
-	return Id;
+
 }
 
 //------------------------------------------------------------------

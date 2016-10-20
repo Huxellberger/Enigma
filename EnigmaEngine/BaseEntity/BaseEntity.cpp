@@ -1,26 +1,36 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
-#include "stdafx.h"
-#include "CppUnitTest.h"
+#include "pch.h"
+
+#include "BaseEntity/BaseEntity.h"
 
 //------------------------------------------------------------------
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+BaseEntity::BaseEntity(const unsigned InId)
+	: Id(InId)
+{
+
+}
 
 //------------------------------------------------------------------
 
-namespace EnigmaTests
-{		
-	TEST_CLASS(EnigmaTests)
-	{
-	public:
-		
-		TEST_METHOD(EnigmaTestMethod)
-		{
-			// TODO: Your test code here
-		}
+BaseEntity::~BaseEntity()
+{
+	Id = 0;
+}
 
-	};
+//------------------------------------------------------------------
+
+void BaseEntity::Update()
+{
+	return;
+}
+
+//------------------------------------------------------------------
+
+unsigned BaseEntity::GetId() const
+{
+	return Id;
 }
 
 //------------------------------------------------------------------

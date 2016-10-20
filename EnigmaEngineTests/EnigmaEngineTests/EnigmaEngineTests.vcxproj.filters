@@ -26,10 +26,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EnigmaDefaultTest.cpp">
+    <ClCompile Include="EnigmaEngineDefaultTestFixture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EngineTests\BaseEntityTests\BaseEntityTestFixturecpp.cpp">
+    <ClCompile Include="BaseEntityTests\BaseEntityTestFixture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

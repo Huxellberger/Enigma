@@ -1,39 +1,40 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
-#include "stdafx.h"
-#include "Engine/EngimaEngine.h"
+#include "pch.h"
 
-#include "Engine/BaseEntity/BaseEntityManager.h"
+#include "BaseEntity/BaseEntityManager.h"
 
-#include <memory>
+#include "BaseEntity/BaseEntity.h"
+
+#include <vector>
 
 //------------------------------------------------------------------
 
-EnigmaEngine::EnigmaEngine()
-	: EntityManager(nullptr)
+unsigned BaseEntityManager::NextAllocatedId = 0;
+
+//------------------------------------------------------------------
+
+BaseEntityManager::BaseEntityManager()
+	:Entities()
 {
 
 }
 
 //------------------------------------------------------------------
 
-EnigmaEngine::~EnigmaEngine()
+BaseEntityManager::~BaseEntityManager()
 {
-	EntityManager.reset();
+	Entities.clear();
 }
 
 //------------------------------------------------------------------
 
-void EnigmaEngine::Initialise()
+void BaseEntityManager::Update()
 {
-	EntityManager = std::make_unique<BaseEntityManager>();
-}
-
-//------------------------------------------------------------------
-
-void EnigmaEngine::ShutDown()
-{
-
+	for (auto& Entity : Entities)
+	{
+		Entity.Update();
+	}
 }
 
 //------------------------------------------------------------------

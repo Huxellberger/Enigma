@@ -10,20 +10,20 @@ class BaseEntityManager;
 
 //------------------------------------------------------------------
 
-class EnigmaEngine
+class EnigmaEngineManager
 {
 public:
 
-	EnigmaEngine();
-	~EnigmaEngine();
+	EnigmaEngineManager();
+	~EnigmaEngineManager();
 
 	void Initialise();
 	void ShutDown();
 private:
 
 	// Disable copy/move constructor
-	EnigmaEngine(const EnigmaEngine& obj);
-	EnigmaEngine(EnigmaEngine&&);
+	EnigmaEngineManager(const EnigmaEngineManager& obj);
+	EnigmaEngineManager(EnigmaEngineManager&&);
 
 	std::unique_ptr<BaseEntityManager> EntityManager;
 };

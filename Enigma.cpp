@@ -2,13 +2,13 @@
 
 #include "stdafx.h"
 
-#include "Engine/EngimaEngine.h"
+#include "EnigmaEngine/EngineManager/EnigmaEngineManager.h"
 
 //------------------------------------------------------------------
 
 int main()
 {
-	EnigmaEngine* Engine = new EnigmaEngine();
+	EnigmaEngineManager* Engine = new EnigmaEngineManager();
     return 0;
 }
 
