@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Enigma", "Enigma.vcxproj", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnigmaEngine", "EnigmaEngine\EnigmaEngine.vcxproj", "{83D6C510-0592-4C83-8D6B-4E289FE0574A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnigmaEngineTests", "EnigmaEngineTests\EnigmaEngineTests\EnigmaEngineTests.vcxproj", "{DDB760CC-5495-4092-BDB7-407DB4217486}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EnigmaEngineTests", "EnigmaEngineTests\EnigmaEngineTests.vcxproj", "{DDB760CC-5495-4092-BDB7-407DB4217486}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

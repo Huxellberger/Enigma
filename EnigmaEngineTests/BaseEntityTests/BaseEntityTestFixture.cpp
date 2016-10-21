@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include <../../EnigmaEngine/BaseEntity/BaseEntity.h>
+#include <../EnigmaEngine/BaseEntity/BaseEntity.h>
 #include <memory>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -16,7 +16,7 @@ namespace BaseEntityTestFixture
 
 		TEST_METHOD(GivenBaseEntity_WhenInitialised_TakesIdValue)
 		{
-			unsigned TestId;
+			unsigned TestId = 2;
 			BaseEntity* TestEntity; 
 			TestEntity = new BaseEntity(TestId);
 
