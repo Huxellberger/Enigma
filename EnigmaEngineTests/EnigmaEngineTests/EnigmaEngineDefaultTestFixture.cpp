@@ -13,7 +13,7 @@ namespace EnigmaEngineDefaultTestFixture
 		
 		TEST_METHOD(EnigmaEngineDefaultTestFixtureMethod)
 		{
-			// TODO: Your test code here
+			
 		}
 
 	};
