@@ -6,7 +6,7 @@
 
 #include "BaseEntity/BaseEntity.h"
 
-#include <vector>
+#include <unordered_map>
 
 //------------------------------------------------------------------
 
@@ -33,8 +33,16 @@ void BaseEntityManager::Update()
 {
 	for (auto& Entity : Entities)
 	{
-		Entity.Update();
+		Entity.second.Update();
 	}
+}
+
+//------------------------------------------------------------------
+
+void BaseEntityManager::AddNewEntity()
+{
+	Entities.insert_or_assign(NextAllocatedId, BaseEntity(NextAllocatedId));
+	NextAllocatedId++;
 }
 
 //------------------------------------------------------------------

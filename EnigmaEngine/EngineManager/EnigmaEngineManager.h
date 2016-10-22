@@ -18,6 +18,7 @@ public:
 	~EnigmaEngineManager();
 
 	void Initialise();
+	void Tick();
 	void ShutDown();
 private:
 

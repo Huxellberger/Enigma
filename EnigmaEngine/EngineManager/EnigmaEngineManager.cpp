@@ -33,7 +33,14 @@ void EnigmaEngineManager::Initialise()
 
 void EnigmaEngineManager::ShutDown()
 {
+	EntityManager.reset();
+}
 
+//------------------------------------------------------------------
+
+void EnigmaEngineManager::Tick()
+{
+	EntityManager->Update();
 }
 
 //------------------------------------------------------------------

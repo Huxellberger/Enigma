@@ -4,9 +4,12 @@
 #include "CppUnitTest.h"
 
 #include <../EnigmaEngine/BaseEntity/BaseEntity.h>
-#include <memory>
+
+//------------------------------------------------------------------
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+//------------------------------------------------------------------
 
 namespace BaseEntityTestFixture
 {
@@ -27,3 +30,7 @@ namespace BaseEntityTestFixture
 
 	};
 }
+
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+//------------------------------------------------------------------
