@@ -190,6 +190,7 @@
   <ItemGroup>
     <ClInclude Include="BaseEntity\BaseEntity.h" />
     <ClInclude Include="BaseEntity\BaseEntityManager.h" />
+    <ClInclude Include="BaseState\BaseState.h" />
     <ClInclude Include="EngineManager\EnigmaEngineManager.h" />
     <ClInclude Include="EnigmaEngine.h" />
     <ClInclude Include="pch.h" />

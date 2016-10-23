@@ -3,11 +3,16 @@
 #include "pch.h"
 
 #include "BaseEntity/BaseEntity.h"
+#include "BaseState/BaseState.h"
+
+#include <iostream>
+#include <memory>
 
 //------------------------------------------------------------------
 
 BaseEntity::BaseEntity(const unsigned InId)
-	: Id(InId)
+	: CurrentState(nullptr)
+	, Id(InId)
 {
 
 }
@@ -16,14 +21,37 @@ BaseEntity::BaseEntity(const unsigned InId)
 
 BaseEntity::~BaseEntity()
 {
-	Id = 0;
+	if (CurrentState)
+	{
+		CurrentState.reset();
+	}
 }
 
 //------------------------------------------------------------------
 
 void BaseEntity::Update()
 {
-	return;
+	CurrentState->OnUpdate(this);
+}
+
+//------------------------------------------------------------------
+
+void BaseEntity::ChangeState(std::shared_ptr<BaseState> NewState)
+{
+	if (CurrentState)
+	{
+		CurrentState->OnExit(this);
+	}
+	CurrentState = NewState;
+
+	if (CurrentState)
+	{
+		CurrentState->OnEnter(this);
+	}
+	else
+	{
+		throw std::invalid_argument("Cannot have a nullptr state.");
+	}
 }
 
 //------------------------------------------------------------------

@@ -2,31 +2,19 @@
 
 #pragma once
 
-#include <memory>
+//------------------------------------------------------------------
+
+class BaseEntity;
 
 //------------------------------------------------------------------
 
-class BaseState;
-
-//------------------------------------------------------------------
-
-class BaseEntity
+class BaseState
 {
 public:
 
-	BaseEntity() = delete;
-	BaseEntity(const unsigned InId);
-	~BaseEntity();
-	BaseEntity(const BaseEntity& obj) = default;
-
-	void Update();
-	void ChangeState(std::shared_ptr<BaseState> NewState);
-
-	unsigned GetId() const;
-private:
-
-	std::shared_ptr<BaseState> CurrentState;
-	unsigned Id;
+	virtual void OnEnter(BaseEntity* Entity) = 0;
+	virtual void OnUpdate(BaseEntity* Entity) = 0;
+	virtual void OnExit(BaseEntity* Entity) = 0;
 };
 
 //------------------------------------------------------------------
