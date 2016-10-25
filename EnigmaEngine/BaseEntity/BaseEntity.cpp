@@ -4,6 +4,7 @@
 
 #include "BaseEntity/BaseEntity.h"
 #include "BaseState/BaseState.h"
+#include "Events/EventCommunicationInterface.h"
 
 #include <iostream>
 #include <memory>
@@ -25,6 +26,13 @@ BaseEntity::~BaseEntity()
 	{
 		CurrentState.reset();
 	}
+}
+
+//------------------------------------------------------------------
+
+void BaseEntity::Init(EventCommunicationInterface* InEventCommunicationInterface)
+{
+	EventInterface = InEventCommunicationInterface;
 }
 
 //------------------------------------------------------------------
@@ -52,6 +60,20 @@ void BaseEntity::ChangeState(std::shared_ptr<BaseState> NewState)
 	{
 		throw std::invalid_argument("Cannot have a nullptr state.");
 	}
+}
+
+//------------------------------------------------------------------
+
+std::shared_ptr<BaseState> BaseEntity::GetCurrentState() const
+{
+	return CurrentState;
+}
+
+//------------------------------------------------------------------
+
+EventCommunicationInterface* BaseEntity::GetEventCommunicationInterface() const
+{
+	return EventInterface;
 }
 
 //------------------------------------------------------------------

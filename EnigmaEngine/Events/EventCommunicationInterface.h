@@ -4,19 +4,18 @@
 
 //------------------------------------------------------------------
 
-class BaseEntity;
+class BaseState;
 
 //------------------------------------------------------------------
 
-class BaseState
+class EventCommunicationInterface
 {
 public:
 
-	virtual void OnEnter(BaseEntity* Entity) = 0;
-	virtual void OnUpdate(BaseEntity* Entity) = 0;
-	virtual void OnExit(BaseEntity* Entity) = 0;
+	virtual ~EventCommunicationInterface() {};
 
-	virtual void OnEventRecieved(BaseEntity* RecipientEntity, BaseState* SenderState) = 0;
+	// Derive meaning of message from state it was fired in. 
+	virtual void FireEvent(unsigned SenderId, unsigned RecipientId, BaseState* SenderState) = 0;
 };
 
 //------------------------------------------------------------------

@@ -25,5 +25,6 @@
     <ClInclude Include="BaseEntity\BaseEntity.h" />
     <ClInclude Include="BaseEntity\BaseEntityManager.h" />
     <ClInclude Include="BaseState\BaseState.h" />
+    <ClInclude Include="Events\EventCommunicationInterface.h" />
   </ItemGroup>
 </Project>

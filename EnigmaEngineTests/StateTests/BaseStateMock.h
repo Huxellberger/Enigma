@@ -18,6 +18,8 @@ public:
 		, OnEnterCalls(0)
 		, OnUpdateCalls(0)
 		, OnExitCalls(0)
+		, OnEventRecievedCalls(0)
+		, LastRecievedEntityId(-1)
 	{
 
 	}
@@ -37,6 +39,13 @@ public:
 		OnExitCalls++;
 	}
 
+	virtual void OnEventRecieved(BaseEntity* RecipientEntity, BaseState* SenderState) override
+	{
+		OnEventRecievedCalls++;
+
+		LastRecievedEntityId = RecipientEntity->GetId();
+	}
+
 	int GetOnEnterCalls() const
 	{
 		return OnEnterCalls;
@@ -52,11 +61,24 @@ public:
 		return OnExitCalls;
 	}
 
+	int GetOnEventRecievedCalls() const
+	{
+		return OnEventRecievedCalls;
+	}
+
+	int GetLastRecievedEntityId() const
+	{
+		return LastRecievedEntityId;
+	}
+
 private:
 
 	int OnEnterCalls;
 	int OnUpdateCalls;
 	int OnExitCalls;
+	int OnEventRecievedCalls;
+
+	int LastRecievedEntityId;
 };
 
 //------------------------------------------------------------------

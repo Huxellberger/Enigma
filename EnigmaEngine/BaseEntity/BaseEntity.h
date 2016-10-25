@@ -7,6 +7,7 @@
 //------------------------------------------------------------------
 
 class BaseState;
+class EventCommunicationInterface;
 
 //------------------------------------------------------------------
 
@@ -19,13 +20,19 @@ public:
 	~BaseEntity();
 	BaseEntity(const BaseEntity& obj) = default;
 
+	void Init(EventCommunicationInterface* InEventCommunicationInterface);
 	void Update();
 	void ChangeState(std::shared_ptr<BaseState> NewState);
+
+	std::shared_ptr<BaseState> GetCurrentState() const;
+	EventCommunicationInterface* GetEventCommunicationInterface() const;
 
 	unsigned GetId() const;
 private:
 
 	std::shared_ptr<BaseState> CurrentState;
+	// Has to be raw pointer, shared tries to instantiate abstract class
+	EventCommunicationInterface* EventInterface;
 	unsigned Id;
 };
 

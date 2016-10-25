@@ -193,6 +193,7 @@
     <ClInclude Include="BaseState\BaseState.h" />
     <ClInclude Include="EngineManager\EnigmaEngineManager.h" />
     <ClInclude Include="EnigmaEngine.h" />
+    <ClInclude Include="Events\EventCommunicationInterface.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>

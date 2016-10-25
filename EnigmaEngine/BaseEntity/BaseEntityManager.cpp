@@ -5,6 +5,7 @@
 #include "BaseEntity/BaseEntityManager.h"
 
 #include "BaseEntity/BaseEntity.h"
+#include "BaseState/BaseState.h"
 
 #include <unordered_map>
 
@@ -41,8 +42,18 @@ void BaseEntityManager::Update()
 
 void BaseEntityManager::AddNewEntity()
 {
-	Entities.insert_or_assign(NextAllocatedId, BaseEntity(NextAllocatedId));
+	BaseEntity NewEntity = BaseEntity(NextAllocatedId);
+	NewEntity.Init(this);
+	Entities.insert_or_assign(NextAllocatedId, NewEntity);
 	NextAllocatedId++;
+}
+
+//------------------------------------------------------------------
+
+void BaseEntityManager::FireEvent(unsigned SenderId, unsigned RecipientId, BaseState* SenderState)
+{
+	std::unordered_map<unsigned, BaseEntity>::iterator Entity = Entities.find(SenderId);
+	Entity->second.GetCurrentState()->OnEventRecieved(&Entity->second, SenderState);
 }
 
 //------------------------------------------------------------------

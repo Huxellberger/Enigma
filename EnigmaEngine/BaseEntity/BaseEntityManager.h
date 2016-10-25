@@ -2,15 +2,19 @@
 
 #pragma once
 
+#include "Events/EventCommunicationInterface.h"
+
 #include <unordered_map>
 
 //------------------------------------------------------------------
 
 class BaseEntity;
+class BaseState;
 
 //------------------------------------------------------------------
 
 class BaseEntityManager
+	: public EventCommunicationInterface
 {
 public:
 
@@ -20,6 +24,10 @@ public:
 	void Update();
 
 	void AddNewEntity();
+
+	// EventCommunicationInterface
+	virtual void FireEvent(unsigned SenderId, unsigned RecipientId, BaseState* SenderState) override;
+	// ~EventCommunicationInterface
 protected:
 
 	std::unordered_map<unsigned, BaseEntity> Entities;
