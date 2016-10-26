@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Events/EventCommunicationInterface.h"
+#include "../Events/EventCommunicationInterface.h"
 
 #include <unordered_map>
 

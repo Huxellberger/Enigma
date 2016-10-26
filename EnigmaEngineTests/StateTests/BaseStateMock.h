@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 
+#include <../EnigmaEngine/BaseEntity/BaseEntity.h>
 #include <../EnigmaEngine/BaseState/BaseState.h>
 
 //------------------------------------------------------------------
@@ -19,7 +20,7 @@ public:
 		, OnUpdateCalls(0)
 		, OnExitCalls(0)
 		, OnEventRecievedCalls(0)
-		, LastRecievedEntityId(-1)
+		, LastRecievedEntityId(97)
 	{
 
 	}
@@ -66,7 +67,7 @@ public:
 		return OnEventRecievedCalls;
 	}
 
-	int GetLastRecievedEntityId() const
+	unsigned GetLastRecievedEntityId() const
 	{
 		return LastRecievedEntityId;
 	}
@@ -78,7 +79,7 @@ private:
 	int OnExitCalls;
 	int OnEventRecievedCalls;
 
-	int LastRecievedEntityId;
+	unsigned LastRecievedEntityId;
 };
 
 //------------------------------------------------------------------

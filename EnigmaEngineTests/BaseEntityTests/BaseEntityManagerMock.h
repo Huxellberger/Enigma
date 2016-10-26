@@ -36,6 +36,13 @@ public:
 	{
 		return NextAllocatedId;
 	}
+
+	BaseEntity* GetBaseEntity(unsigned IdNumber)
+	{
+		std::unordered_map<unsigned, BaseEntity>::iterator Entity = Entities.find(IdNumber);
+		return &Entity->second;
+	}
+
 private:
 
 	// Disable copy/move constructor
