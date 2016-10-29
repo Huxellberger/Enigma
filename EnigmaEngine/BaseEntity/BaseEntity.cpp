@@ -13,6 +13,17 @@
 
 BaseEntity::BaseEntity(const unsigned InId)
 	: CurrentState(nullptr)
+	, GlobalState(nullptr)
+	, Id(InId)
+{
+
+}
+
+//------------------------------------------------------------------
+
+BaseEntity::BaseEntity(const unsigned InId, std::shared_ptr<BaseState> InGlobalState)
+	: CurrentState(nullptr)
+	, GlobalState(InGlobalState)
 	, Id(InId)
 {
 
@@ -25,6 +36,11 @@ BaseEntity::~BaseEntity()
 	if (CurrentState)
 	{
 		CurrentState.reset();
+	}
+
+	if (GlobalState)
+	{
+		GlobalState.reset();
 	}
 }
 
@@ -39,6 +55,12 @@ void BaseEntity::Init(EventCommunicationInterface* InEventCommunicationInterface
 
 void BaseEntity::Update()
 {
+	// Not all entities have to keep a global state.
+	if (GlobalState)
+	{
+		GlobalState->OnUpdate(this);
+	}
+	
 	CurrentState->OnUpdate(this);
 }
 

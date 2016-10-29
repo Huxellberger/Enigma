@@ -1,5 +1,12 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
+/*********************************************************
+The fundamental building block of Enigma that represents 
+a thin or person in the world. Each has a state it exists in 
+that defines its behaviour. Besides this an Entity also
+currently has a unique Id it is identified by. 
+**********************************************************/
+
 #pragma once
 
 #include <memory>
@@ -17,6 +24,7 @@ public:
 
 	BaseEntity() = delete;
 	BaseEntity(const unsigned InId);
+	BaseEntity(const unsigned InId, std::shared_ptr<BaseState> InGlobalState);
 	~BaseEntity();
 	BaseEntity(const BaseEntity& obj) = default;
 
@@ -31,6 +39,7 @@ public:
 private:
 
 	std::shared_ptr<BaseState> CurrentState;
+	std::shared_ptr<BaseState> GlobalState;
 	// Has to be raw pointer, shared tries to instantiate abstract class
 	EventCommunicationInterface* EventInterface;
 	unsigned Id;

@@ -1,5 +1,9 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
+/*********************************************************
+The game engine that executes the core loop. 
+**********************************************************/
+
 #pragma once
 
 #include <memory>

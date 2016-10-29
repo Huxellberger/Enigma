@@ -97,6 +97,40 @@ namespace BaseEntityTestFixture
 			delete TestEntity;
 		}
 
+		TEST_METHOD(GivenBaseEntity_WhenUpdated_GlobalStateUpdated)
+		{
+			unsigned TestId = 2;
+			BaseEntity* TestEntity;
+			std::shared_ptr<BaseStateMock> StateMock = std::make_shared<BaseStateMock>();
+			std::shared_ptr<BaseStateMock> GlobalStateMock = std::make_shared<BaseStateMock>();
+
+			TestEntity = new BaseEntity(TestId, GlobalStateMock);
+			TestEntity->ChangeState(StateMock);
+
+			TestEntity->Update();
+			
+			Assert::AreEqual(1, GlobalStateMock->GetOnUpdateCalls());
+
+			StateMock.reset();
+			GlobalStateMock.reset();
+			delete TestEntity;
+		}
+
+		TEST_METHOD(GivenBaseEntity_WhenUpdatedWithNullGlobalState_NoErrorRecieved)
+		{
+			unsigned TestId = 2;
+			BaseEntity* TestEntity;
+			std::shared_ptr<BaseStateMock> StateMock = std::make_shared<BaseStateMock>();
+
+			TestEntity = new BaseEntity(TestId);
+			TestEntity->ChangeState(StateMock);
+
+			TestEntity->Update();
+
+			StateMock.reset();
+			delete TestEntity;
+		}
+
 	};
 }
 

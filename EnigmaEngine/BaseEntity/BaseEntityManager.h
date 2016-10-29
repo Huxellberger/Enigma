@@ -1,5 +1,11 @@
 // Copyright (C) Threetee Gang, Jake Huxell 2016
 
+/*********************************************************
+A Class to handle the updating of all base entities within
+a game. Also provides the message bus for all BaseEntities 
+to communicate with each other
+**********************************************************/
+
 #pragma once
 
 #include "../Events/EventCommunicationInterface.h"
